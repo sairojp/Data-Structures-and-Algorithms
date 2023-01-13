@@ -31,7 +31,7 @@ class Queue{
     else
       rear++;
       a[rear]=item;
-      cout<<"Inserted"<<endl;
+      cout<<"Inserted: "<<a[rear]<<endl;
   }
   void dequeue(){
     if(isempty()){
@@ -59,7 +59,7 @@ struct Queue q1;
 int item;
 char oper;
 input:
-cout<<"Enter 1 to enqueue"<<endl<<"2 to dequeue"<<endl<<"3 to display"<<endl<<"4 to terminate "<<endl;
+cout<<"Enter"<<endl<<"1 to enqueue"<<endl<<"2 to dequeue"<<endl<<"3 to display"<<endl<<"4 to terminate "<<endl;
 cin>>oper;
 switch(oper){
   case '1':
