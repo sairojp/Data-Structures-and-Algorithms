@@ -1,30 +1,26 @@
 #include <iostream>
 using namespace std;
-
+#define SIZE 5
 class Queue{
   private:
-  int a[5];
+  int a[SIZE];
   int rear,front;
   public:
   Queue(){
-    rear=-1;
-    front=-1;
+    rear=SIZE-1;
+    front=SIZE-1;
   }
   bool isempty(){
-    if (rear == -1){
+    if (rear==front){
       return true;
     }
     else 
     return false;
   }
   bool isfull(){
-    if( front==0 && rear==4){
+    if(front==(rear+1)%SIZE){
       return true;
     }
-    if( front == rear + 1){
-      return true;
-    }
-    
     else 
     return false;
   }
@@ -33,10 +29,7 @@ class Queue{
       cout<<"Queue is full"<<endl;
     }
     else{
-      if(front==-1){
-        front++;
-      }
-      rear=(rear + 1) % 5;
+      rear=(rear + 1) % SIZE;
       a[rear]=item;
       cout<<"Inserted"<<endl;
   }
@@ -45,9 +38,10 @@ class Queue{
     if(isempty()){
       cout<<"Queue is empty"<<endl;
     }
-    else
+    else{
+    front=(front+1)%SIZE;
     cout<<"Deleted:"<<a[front]<<endl;
-    front=(front+1)%5;
+    }
   }
   void display(){
     int i;
@@ -56,10 +50,10 @@ class Queue{
     }
     else 
       cout<<"The elements in queues are"<<endl;
-      for( i=front;i!=rear%5;i = (i+1)%5){
+      for( i=(front+1)%SIZE;i!=rear;i = (i+1)%SIZE){
         cout<<a[i]<<"\n";
       }
-      cout<<endl;
+    cout<<a[rear]<<endl;
   }
 };
 
