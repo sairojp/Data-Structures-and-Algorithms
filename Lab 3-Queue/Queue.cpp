@@ -76,7 +76,7 @@ switch(oper){
   case '4':
   return 0;
   default:
-  cout<<"Enter valid option";
+  cout<<"Enter valid option"<<endl;
   break;
 }
 goto input;
