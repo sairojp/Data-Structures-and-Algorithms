@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-
+#define SIZE 10
 class Queue{
   private:
-  int a[20];
+  int a[SIZE];
   int rear,front;
   public:
   Queue(){
@@ -55,7 +55,7 @@ class Queue{
 };
 
 int main(){
-struct Queue q1;
+ Queue q1;
 int item;
 char oper;
 input:
