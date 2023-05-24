@@ -161,5 +161,4 @@ switch(oper){
   break;
 }
 goto input;
-
 }
